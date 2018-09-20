@@ -27,4 +27,23 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="RightCannon" type="Node2D" parent="." index="2"]
+
+position = Vector2( 27, -27 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftCannon" type="Node2D" parent="." index="3"]
+
+position = Vector2( -27, -27 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CanFireTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="CanFireTimer" to="." method="_on_CanFireTimer_timeout"]
+
 
