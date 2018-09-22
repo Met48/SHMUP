@@ -4,7 +4,6 @@ const SPEED = 256
 
 onready var Bullet = load("res://Player/Bullet.tscn")
 var cannons = []
-var cannon_index = 0
 var can_fire = true
 
 
@@ -38,17 +37,19 @@ func fire_shot():
 	can_fire = false
 	$CanFireTimer.start()
 
-	var cannon = cannons[cannon_index]
+	var bulletR = Bullet.instance()
+	var bulletL = Bullet.instance()
+	var cannon = cannons[0]
 
-	cannon_index += 1
-	if cannon_index >= len(cannons):
-		cannon_index = 0
-
-	var bullet = Bullet.instance()
-	bullet.global_position = cannon.global_position
+	bulletL.global_position = cannon.global_position
+	cannon = cannons[1]
+	bulletR.global_position = cannon.global_position
+	
 	var parent = get_parent()
-	parent.add_child(bullet)
-	parent.move_child(bullet, get_index())
+	parent.add_child(bulletR)
+	parent.move_child(bulletR, get_index())
+	parent.add_child(bulletL)
+	parent.move_child(bulletL, get_index())
 
 
 func _on_CanFireTimer_timeout():
