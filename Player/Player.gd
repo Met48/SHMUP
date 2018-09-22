@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 256
+const SPEED = 512
 
 onready var Bullet = load("res://Player/Bullet.tscn")
 var cannons = []
