@@ -44,7 +44,7 @@ func fire_shot():
 	bulletL.global_position = cannon.global_position
 	cannon = cannons[1]
 	bulletR.global_position = cannon.global_position
-	
+
 	var parent = get_parent()
 	parent.add_child(bulletR)
 	parent.move_child(bulletR, get_index())
