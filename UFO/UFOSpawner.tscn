@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UFO/UFOSpawner.gd" type="Script" id=1]
+[ext_resource path="res://UFO/UFO.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 20.0
+_data = {
+"points": PoolVector2Array( 0, 0, -2.91989, 102.488, -100.778, -55.1008, 92.2685, -23.6511, -117.626, 40.0243, -209.106, 119.217, 105.263, -97.5069, -63.1579, 38.7812, -858.537, 129.743, -58.7258, -36.5651, 80.8864, 60.9418, -850.781, 279.328, -106.371, -55.4017, 18.8366, 19.9446, -216.986, 268.247, 40.9972, -48.7535, -80.8864, 76.4543, -221.418, 361.322, 245.983, -136.288, 0, 0, -1190.95, 569.632 )
+}
+
+[node name="UFOSpawner" type="Node2D"]
+
+script = ExtResource( 1 )
+count = 5
+interval = 0.2
+UFO = ExtResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="." index="0"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( 1075.37, 11.6254 )
+curve = SubResource( 1 )
+
+[node name="SpawnInterval" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="SpawnInterval" to="." method="spawn"]
+
+
