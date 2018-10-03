@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/space-shooter-redux/Backgrounds/black.png" type="Texture" id=1]
 [ext_resource path="res://Background/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-=======
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UFO/UFOSpawner.tscn" type="PackedScene" id=2]
->>>>>>> cf0a0f17ff1b56e36b6bba0aa54eb21750b2d56f
+[ext_resource path="res://UFO/UFOSpawner.tscn" type="PackedScene" id=4]
 
 [node name="TestScene" type="Node2D" index="0"]
 
@@ -77,6 +71,6 @@ script = ExtResource( 2 )
 
 position = Vector2( 501, 541 )
 
-[node name="UFOSpawner" parent="." index="1" instance=ExtResource( 2 )]
+[node name="UFOSpawner" parent="." index="2" instance=ExtResource( 4 )]
 
 
